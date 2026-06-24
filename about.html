@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Amazon Product Comparison</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#f3f3f3;
+}
+
+header{
+  background:#131921;
+  color:white;
+  padding:20px;
+}
+
+header h1{
+  margin-bottom:10px;
+}
+
+.search-bar{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:4px;
+  font-size:16px;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+}
+
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+  gap:20px;
+}
+
+.product-card{
+  background:white;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+}
+
+.product-name{
+  font-weight:bold;
+  margin:10px 0;
+}
+
+.price{
+  color:#b12704;
+  font-size:20px;
+}
+
+.rating{
+  color:orange;
+  margin:8px 0;
+}
+
+button{
+  width:100%;
+  padding:10px;
+  background:#ffd814;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#f7ca00;
+}
+
+.compare-section{
+  margin-top:40px;
+}
+
+.compare-table{
+  width:100%;
+  background:white;
+  border-collapse:collapse;
+}
+
+.compare-table th,
+.compare-table td{
+  border:1px solid #ddd;
+  padding:12px;
+  text-align:center;
+}
+
+.highlight{
+  background:#d4edda;
+}
+
+.stats{
+  margin-top:20px;
+  background:white;
+  padding:20px;
+  border-radius:10px;
+}
+
+.empty-message{
+  text-align:center;
+  color:gray;
+  padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Amazon Product Comparison Tool</h1>
+
+  <input
+    type="text"
+    class="search-bar js-search"
+    placeholder="Search products..."
+  >
+</header>
+
+<div class="container">
+
+  <div class="products-grid js-products-grid"></div>
+
+  <div class="compare-section">
+
+    <h2>Compare Products</h2>
+
+    <div class="js-comparison-container">
+      <p class="empty-message">
+        No products selected yet.
+      </p>
+    </div>
+
+    <div class="stats js-stats"></div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
